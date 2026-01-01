@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAODI | Ecosistema de Inteligencia Criminal – Visión 2026</title>
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════
+           ARQUITECTURA ESTRATÉGICA - CAODI 2026
+           Ultra Premium / Presentación Ejecutiva Institucional
+        ═══════════════════════════════════════════════════════════════════ */
+
+        /* ────────────────────────────────────────────────────────────────
+           VARIABLES Y PALETA CROMÁTICA INSTITUCIONAL
+        ──────────────────────────────────────────────────────────────── */
+        :root {
+            /* Verdes Institucionales Premium */
+            --verde-profundo: #0a4d2e;
+            --verde-principal: #146b44;
+            --verde-medio: #1a7e52;
+            --verde-suave: #e8f5f0;
+            --verde-muy-suave: #f4faf8;
+
+            /* Neutrales Premium */
+            --blanco: #ffffff;
+            --gris-muy-claro: #fafbfc;
+            --gris-claro: #f5f7f9;
+            --gris-borde: #e5e7eb;
+            --gris-texto: #6b7280;
+            --gris-oscuro: #374151;
+            --negro-suave: #1f2937;
+
+            /* Estados Visuales */
+            --produccion-fondo: #e8f5f0;
+            --produccion-texto: #0a4d2e;
+            --produccion-borde: #146b44;
+
+            --avance-fondo: #eff6ff;
+            --avance-texto: #1e40af;
+            --avance-borde: #3b82f6;
+
+            --planificado-fondo: #fffbeb;
+            --planificado-texto: #92400e;
+            --planificado-borde: #f59e0b;
+
+            /* Tipografía */
+            --fuente: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+            /* Sombras Sutiles */
+            --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --sombra-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --sombra-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           RESET Y BASE
+        ──────────────────────────────────────────────────────────────── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--fuente);
+            background: var(--gris-muy-claro);
+            color: var(--negro-suave);
+            line-height: 1.6;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           LAYOUT PRINCIPAL
+        ──────────────────────────────────────────────────────────────── */
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .seccion {
+            margin-bottom: 4rem;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           HEADER INSTITUCIONAL
+        ──────────────────────────────────────────────────────────────── */
+        .header {
+            background: var(--blanco);
+            border-bottom: 1px solid var(--gris-borde);
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            box-shadow: var(--sombra-sm);
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--verde-profundo), var(--verde-principal));
+        }
+
+        .header-grid {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 100px;
+            width: 100px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .titulo-area {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.625rem;
+        }
+
+        .titulo-area h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--verde-profundo);
+            line-height: 1.25;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .titulo-area h2 {
+            font-size: 1.0625rem;
+            font-weight: 400;
+            color: var(--gris-oscuro);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .meta {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.625rem;
+        }
+
+        .badge-mockup {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            border: 1px solid #fbbf24;
+            color: #92400e;
+            padding: 0.5rem 1.125rem;
+            border-radius: 6px;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            box-shadow: var(--sombra-sm);
+            white-space: nowrap;
+        }
+
+        .fecha {
+            font-size: 0.8125rem;
+            color: var(--gris-texto);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           TÍTULOS DE SECCIÓN
+        ──────────────────────────────────────────────────────────────── */
+        .titulo-seccion {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--verde-profundo);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--gris-borde);
+            position: relative;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: var(--verde-principal);
+        }
+
+        .titulo-seccion.evolucion {
+            color: var(--verde-medio);
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           CARDS / TARJETAS
+        ──────────────────────────────────────────────────────────────── */
+        .card {
+            background: var(--blanco);
+            border: 1px solid var(--gris-borde);
+            border-radius: 8px;
+            padding: 1.75rem;
+            box-shadow: var(--sombra-sm);
+            position: relative;
+            border-left: 4px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--sombra-md);
+            transform: translateY(-2px);
+        }
+
+        /* Card Orquestador Especial */
+        .card-orquestador {
+            background: linear-gradient(to right, var(--verde-muy-suave), var(--blanco));
+            border-left: 6px solid var(--verde-profundo);
+            border: 2px solid var(--verde-principal);
+            box-shadow: var(--sombra-lg);
+        }
+
+        /* Estados de Cards */
+        .card.produccion {
+            border-left-color: var(--produccion-borde);
+        }
+
+        .card.avance {
+            border-left-color: var(--avance-borde);
+        }
+
+        .card.planificado {
+            border-left-color: var(--planificado-borde);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--verde-profundo);
+            line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 0.9375rem;
+            color: var(--gris-oscuro);
+            line-height: 1.65;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           ETIQUETAS DE ESTADO
+        ──────────────────────────────────────────────────────────────── */
+        .estado {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            border-radius: 6px;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            border: 1px solid;
+        }
+
+        .estado.produccion {
+            background: var(--produccion-fondo);
+            color: var(--produccion-texto);
+            border-color: var(--produccion-borde);
+        }
+
+        .estado.avance {
+            background: var(--avance-fondo);
+            color: var(--avance-texto);
+            border-color: var(--avance-borde);
+        }
+
+        .estado.planificado {
+            background: var(--planificado-fondo);
+            color: var(--planificado-texto);
+            border-color: var(--planificado-borde);
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           GRILLAS
+        ──────────────────────────────────────────────────────────────── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           FLUJO CONCEPTUAL
+        ──────────────────────────────────────────────────────────────── */
+        .flujo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2.5rem 1rem;
+            background: var(--blanco);
+            border: 1px solid var(--gris-borde);
+            border-radius: 8px;
+            box-shadow: var(--sombra-sm);
+            gap: 0.5rem;
+        }
+
+        .nodo {
+            flex: 1;
+            text-align: center;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--gris-oscuro);
+            padding: 1rem 0.75rem;
+            background: var(--gris-muy-claro);
+            border: 2px solid var(--gris-borde);
+            border-radius: 6px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .nodo:hover {
+            background: var(--verde-muy-suave);
+            border-color: var(--verde-principal);
+            transform: scale(1.03);
+        }
+
+        .nodo.orquestador {
+            background: linear-gradient(135deg, var(--verde-suave), var(--blanco));
+            border-color: var(--verde-principal);
+            color: var(--verde-profundo);
+            font-weight: 800;
+        }
+
+        .nodo.final {
+            background: linear-gradient(135deg, var(--verde-profundo), var(--verde-principal));
+            color: var(--blanco);
+            border-color: var(--verde-profundo);
+            font-weight: 700;
+        }
+
+        .nodo::after {
+            content: '→';
+            position: absolute;
+            right: -1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.25rem;
+            color: var(--verde-principal);
+        }
+
+        .nodo:last-child::after {
+            content: none;
+        }
+
+        .mensaje-importante {
+            margin-top: 1.5rem;
+            padding: 1.25rem 2rem;
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--verde-profundo);
+            font-weight: 700;
+            font-size: 0.9375rem;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           PRINCIPIOS RECTORES
+        ──────────────────────────────────────────────────────────────── */
+        .principio {
+            background: var(--blanco);
+            border: 2px solid var(--gris-borde);
+            border-radius: 8px;
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+            box-shadow: var(--sombra-sm);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .principio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--verde-profundo), var(--verde-principal));
+            border-radius: 8px 8px 0 0;
+        }
+
+        .principio:hover {
+            border-color: var(--verde-principal);
+            box-shadow: var(--sombra-md);
+            transform: translateY(-3px);
+        }
+
+        .principio strong {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 800;
+            color: var(--verde-profundo);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.625rem;
+        }
+
+        .principio span {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--gris-oscuro);
+            line-height: 1.5;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           FOOTER INSTITUCIONAL
+        ──────────────────────────────────────────────────────────────── */
+        .footer {
+            margin-top: 5rem;
+            padding: 2.5rem 0;
+            background: linear-gradient(180deg, var(--verde-profundo), var(--verde-principal));
+            color: var(--blanco);
+            text-align: center;
+        }
+
+        .footer h4 {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.01em;
+        }
+
+        .footer p {
+            font-size: 0.875rem;
+            opacity: 0.95;
+        }
+
+        /* ────────────────────────────────────────────────────────────────
+           RESPONSIVE DESIGN
+        ──────────────────────────────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .grid-5 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contenedor {
+                padding: 0 1.5rem;
+            }
+
+            .header-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .logo {
+                margin: 0 auto;
+            }
+
+            .logo img {
+                height: 90px;
+                width: 90px;
+            }
+
+            .titulo-area {
+                text-align: center;
+            }
+
+            .meta {
+                text-align: center;
+                align-items: center;
+            }
+
+            .titulo-area h1 {
+                font-size: 1.5rem;
+            }
+
+            .titulo-area h2 {
+                font-size: 0.9375rem;
+            }
+
+            .badge-mockup {
+                font-size: 0.625rem;
+                padding: 0.4rem 0.875rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-5 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flujo {
+                flex-direction: column;
+                padding: 2rem 1rem;
+            }
+
+            .nodo {
+                width: 100%;
+            }
+
+            .nodo::after {
+                content: '↓';
+                right: auto;
+                top: auto;
+                bottom: -1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contenedor {
+                padding: 0 1rem;
+            }
+
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .logo img {
+                height: 75px;
+                width: 75px;
+            }
+
+            .titulo-area h1 {
+                font-size: 1.25rem;
+                line-height: 1.3;
+            }
+
+            .titulo-area h2 {
+                font-size: 0.875rem;
+            }
+
+            .badge-mockup {
+                font-size: 0.5625rem;
+                padding: 0.375rem 0.75rem;
+            }
+
+            .fecha {
+                font-size: 0.75rem;
+            }
+
+            .grid-5 {
+                grid-template-columns: 1fr;
+            }
+
+            .titulo-seccion {
+                font-size: 1.125rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+
+            .nodo {
+                font-size: 0.75rem;
+                padding: 0.875rem 0.625rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         HEADER
+    ═══════════════════════════════════════════════════════════════════ -->
+    <div class="header">
+        <div class="contenedor header-grid">
+            <div class="logo">
+                <img src="didi.png" alt="DICDINCAR - Dirección Control Drogas e Investigación Criminal">
+            </div>
+            <div class="titulo-area">
+                <h1>Ecosistema de Inteligencia Criminal – Visión 2026</h1>
+                <h2>Consolidación, correlación y apoyo a la toma de decisiones investigativas</h2>
+            </div>
+            <div class="meta">
+                <div class="badge-mockup">Mockup conceptual – No consume datos reales ni fuentes productivas</div>
+                <div class="fecha">Arquitectura operativa en evolución – 2025 / 2026</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor">
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             CAPA DE ORQUESTACIÓN (OPERATIVA)
+        ═══════════════════════════════════════════════════════════════════ -->
+        <section class="seccion">
+            <h3 class="titulo-seccion">Capa de Orquestación (Operativa)</h3>
+            
+            <div class="card card-orquestador">
+                <div class="card-header">
+                    <h3>SIDIC – Orquestador Institucional</h3>
+                    <span class="estado produccion">En Operación (Producción)</span>
+                </div>
+                <p>Componente central desplegado en servidor productivo que orquesta y coordina los distintos aplicativos institucionales existentes, gestionando flujos, integraciones y comunicación entre sistemas. Este componente ya cumple funciones de orquestación real.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             SISTEMAS BASE EN OPERACIÓN
+        ═══════════════════════════════════════════════════════════════════ -->
+        <section class="seccion">
+            <h3 class="titulo-seccion">Sistemas Base en Operación</h3>
+
+            <div class="grid-2">
+                <div class="card planificado">
+                    <div class="card-header">
+                        <h3>Asistente de Consolidación por Identificador</h3>
+                        <span class="estado planificado">Planificado / Evolutivo</span>
+                    </div>
+                    <p>Consolida identidad, antecedentes, equipamiento, relatos y fuentes autorizadas a partir de identificadores múltiples. Auditoría obligatoria.</p>
+                </div>
+
+                <div class="card avance">
+                    <div class="card-header">
+                        <h3>SUBI – Sistema Unificado de Blancos Investigativos</h3>
+                        <span class="estado avance">En Desarrollo</span>
+                    </div>
+                    <p>Gestión estructurada de sujetos de interés, estados investigativos formales y relaciones relevantes. En proceso de desarrollo en tecnología Laravel.</p>
+                </div>
+
+                <div class="card avance">
+                    <div class="card-header">
+                        <h3>SIDIC-RD – Sistema de Registro de Detenidos</h3>
+                        <span class="estado avance">En Desarrollo</span>
+                    </div>
+                    <p>Registro institucional homologado de personas detenidas, integrado a procesos de análisis criminal.</p>
+                </div>
+
+                <div class="card avance">
+                    <div class="card-header">
+                        <h3>SIDIC – Gestión de Presupuestos</h3>
+                        <span class="estado avance">Avance 95%</span>
+                    </div>
+                    <p>Sistema de gestión y visualización presupuestaria institucional, próximo a cierre funcional y puesta en régimen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             EVOLUCIÓN 2026 – CAPAS DE INTELIGENCIA
+        ═══════════════════════════════════════════════════════════════════ -->
+        <section class="seccion">
+            <h3 class="titulo-seccion evolucion">Evolución 2026 – Capas de Inteligencia</h3>
+
+            <div class="grid-2">
+                <div class="card planificado">
+                    <div class="card-header">
+                        <h3>Perfil Investigativo Dinámico (PID)</h3>
+                        <span class="estado planificado">Planificado / Evolutivo</span>
+                    </div>
+                    <p>Perfil vivo que evoluciona con nuevos antecedentes y eventos policiales.</p>
+                </div>
+
+                <div class="card planificado">
+                    <div class="card-header">
+                        <h3>Motor de Correlación Criminal</h3>
+                        <span class="estado planificado">Planificado / Evolutivo</span>
+                    </div>
+                    <p>Sugerencia de vínculos relevantes y patrones operativos repetidos, siempre sujetos a validación analítica humana.</p>
+                </div>
+
+                <div class="card planificado">
+                    <div class="card-header">
+                        <h3>Integración de Contexto Financiero (API Equifax)</h3>
+                        <span class="estado planificado">Planificado / Evolutivo</span>
+                    </div>
+                    <p>Indicadores contextuales financieros como apoyo investigativo, sin scoring ni clasificación automática de personas.</p>
+                </div>
+
+                <div class="card planificado">
+                    <div class="card-header">
+                        <h3>Bitácora Inteligente y Auditoría de Decisiones</h3>
+                        <span class="estado planificado">Planificado / Evolutivo</span>
+                    </div>
+                    <p>Registro del uso de antecedentes en decisiones investigativas, con trazabilidad institucional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             FLUJO CONCEPTUAL DEL ECOSISTEMA
+        ═══════════════════════════════════════════════════════════════════ -->
+        <section class="seccion">
+            <h3 class="titulo-seccion">Flujo Conceptual del Ecosistema</h3>
+            
+            <div class="flujo">
+                <div class="nodo">Aplicativos Existentes</div>
+                <div class="nodo orquestador">SIDIC Orquestador</div>
+                <div class="nodo">Consolidación</div>
+                <div class="nodo">Perfil Investigativo Dinámico</div>
+                <div class="nodo">Correlación Analítica</div>
+                <div class="nodo final">Apoyo a la Decisión Investigativa</div>
+            </div>
+            
+            <div class="mensaje-importante">
+                ⚠️ IMPORTANTE: El sistema APOYA y NO reemplaza la decisión humana.
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             PRINCIPIOS RECTORES
+        ═══════════════════════════════════════════════════════════════════ -->
+        <section class="seccion">
+            <h3 class="titulo-seccion">Principios Rectores del Modelo</h3>
+            
+            <div class="grid-5">
+                <div class="principio">
+                    <strong>Fuentes Autorizadas</strong>
+                    <span>Uso exclusivo de datos oficiales y validados.</span>
+                </div>
+                <div class="principio">
+                    <strong>Neutralidad</strong>
+                    <span>Tratamiento algorítmico neutral de las personas.</span>
+                </div>
+                <div class="principio">
+                    <strong>Trazabilidad</strong>
+                    <span>Auditoría inmutable de cada consulta y cruce.</span>
+                </div>
+                <div class="principio">
+                    <strong>Apoyo, no reemplazo</strong>
+                    <span>Sistemas de soporte, la decisión es humana.</span>
+                </div>
+                <div class="principio">
+                    <strong>Enfoque Investigativo</strong>
+                    <span>Orientado a esclarecer hechos, no a predicción social.</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════════════════ -->
+    <div class="footer">
+        <h4>Propuesta conceptual de evolución tecnológica para apoyo a la investigación criminal – 2026</h4>
+        <p>Realizado por Ingeniero Marcelo Garrido (CAODI Zona Centro Sur)</p>
+    </div>
+
+</body>
+</html>
